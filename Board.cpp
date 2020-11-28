@@ -50,6 +50,9 @@ class Board
         else if (move == "3 2") { this->boardState[7]=this->currentPlayerTurn; }
         else if (move == "3 3") { this->boardState[8]=this->currentPlayerTurn; }
         else {}
+
+        if (this->currentPlayerTurn=='X') { this->currentPlayerTurn='O'; }
+        else { this->currentPlayerTurn='X'; }
     }
     void checkValidMove(); // checks that the move made was valid
 
