@@ -35,7 +35,33 @@ class Board
         cout << endl;
 
     }
-    bool checkForWin(); // checking for win returns false if no player won true if someone won
+    bool checkForWin() // checking for win returns false if no player won true if someone won
+    {
+        char x1, x2, x3, x4, x5, x6, x7, x8, x9;
+
+        x1 = this->boardState[0];
+        x2 = this->boardState[1];
+        x3 = this->boardState[2];
+        x4 = this->boardState[3];
+        x5 = this->boardState[4];
+        x6 = this->boardState[5];
+        x7 = this->boardState[6];
+        x8 = this->boardState[7];
+        x9 = this->boardState[8];
+
+        if(x1 == x2 && x2 == x3) { return true; }
+        else if (x4 == x5 && x5 == x6) { return true; }
+        else if (x7 == x8 && x8 == x9) { return true; }
+
+        else if (x1 == x4 && x4 == x7) { return true; }
+        else if (x2 == x5 && x5 == x8) { return true; }
+        else if (x3 == x6 && x6 == x9) { return true; }
+
+        else if (x1 == x5 && x5 == x9) { return true; }
+        else if (x3 == x5 && x5 == x7) { return true; }
+        else { return false; }
+    }
+
     string getTimeStamp(); // returns a time as a string
     void logMoves(); // log moves onto a log.txt file
 
@@ -86,8 +112,9 @@ class Board
 
     private:
 
-        vector<char> boardState; // current state of the tictactoe board
+        vector<char> boardState;    // current state of the tictactoe board
         vector<string> boardLogs;   // logs of the board
-        char currentPlayerTurn;  // the player turn
+        char currentPlayerTurn;     // the player turn
+        char winner;                // returns player who won
 };
 
