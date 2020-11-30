@@ -2,7 +2,6 @@
 #include <string>
 #include "Board.cpp"
 
-#define Prompt() cout << "> " // defining the prompt '> ' for asking player
 
 using namespace std;
 
@@ -24,7 +23,7 @@ int main() {
   getline(cin, userInput);
 	cout << endl;
 
-  while (true) {
+  while (b->checkForWin()) {
 
     b->displayBoard();
     cout << "Enter your next move! (i.e '1 2' means row 1 column 2)" << endl << endl;
@@ -33,5 +32,10 @@ int main() {
     b->makeMove(userInput);
 
   }
+
+  b->displayBoard();
+
+  cout << endl;
+  cout << "Winner is " << b->getWinner() << endl;
 
 }

@@ -49,17 +49,17 @@ class Board
         x8 = this->boardState[7];
         x9 = this->boardState[8];
 
-        if(x1 == x2 && x2 == x3) { return true; }
-        else if (x4 == x5 && x5 == x6) { return true; }
-        else if (x7 == x8 && x8 == x9) { return true; }
+        if (x1 == x2 && x2 == x3 && x1 != ' ' && x2 != ' ' && x3 != ' ') { this->winner=x1; return false; }
+        else if (x4 == x5 && x5 == x6 && x4 != ' ' && x5 != ' ' && x6 != ' ') { this->winner=x4; return false; }
+        else if (x7 == x8 && x8 == x9 && x7 != ' ' && x8 != ' ' && x9 != ' ') { this->winner=x7; return false; }
 
-        else if (x1 == x4 && x4 == x7) { return true; }
-        else if (x2 == x5 && x5 == x8) { return true; }
-        else if (x3 == x6 && x6 == x9) { return true; }
+        else if (x1 == x4 && x4 == x7 && x1 != ' ' && x4 != ' ' && x7 != ' ') { this->winner=x1; return false; }
+        else if (x2 == x5 && x5 == x8 && x2 != ' ' && x5 != ' ' && x8 != ' ') { this->winner=x2; return false; }
+        else if (x3 == x6 && x6 == x9 && x3 != ' ' && x6 != ' ' && x9 != ' ') { this->winner=x3; return false; }
 
-        else if (x1 == x5 && x5 == x9) { return true; }
-        else if (x3 == x5 && x5 == x7) { return true; }
-        else { return false; }
+        else if (x1 == x5 && x5 == x9 && x1 != ' ' && x5 != ' ' && x9 != ' ') { this->winner=x1; return false; }
+        else if (x3 == x5 && x5 == x7 && x3 != ' ' && x5 != ' ' && x7 != ' ') { this->winner=x3; return false; }
+        else { return true; }
     }
 
     string getTimeStamp(); // returns a time as a string
@@ -108,6 +108,8 @@ class Board
 
         }
     }
+
+    char getWinner() { return this->winner; }
 
 
     private:
