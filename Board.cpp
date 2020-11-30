@@ -66,17 +66,21 @@ class Board
         int playerMove = convertMove(move);
         string newMove; // incase invalid Move is selected
 
-        if (playerMove == -1) {
+        if (playerMove == -1 || checkValidMove(playerMove) == false) {
             cout << "Invalid Move!" << endl;
             Prompt();
             getline(cin, newMove);
             makeMove(newMove);
+
         }
-        else { this->boardState[playerMove] = this->currentPlayerTurn; }
+        else {
+            this->boardState[playerMove] = this->currentPlayerTurn;
         
-        // Changes player turn
-        if (this->currentPlayerTurn=='X') { this->currentPlayerTurn='O'; }
-        else { this->currentPlayerTurn='X'; }
+            // Changes player turn
+            if (this->currentPlayerTurn=='X') { this->currentPlayerTurn='O'; }
+            else { this->currentPlayerTurn='X'; }
+
+        }
     }
 
 
