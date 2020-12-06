@@ -33,6 +33,8 @@ int main() {
 
   }
 
+  string w = b->getWinner();
+  b->logMoves(w);
   b->displayBoard();
 
   cout << endl;

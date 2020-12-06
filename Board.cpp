@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
 //#include "Board.h" removing since repl has problems with .h files
 using namespace std;
 
@@ -59,12 +60,19 @@ class Board
 
         else if (x1 == x5 && x5 == x9 && x1 != ' ' && x5 != ' ' && x9 != ' ') { this->winner=x1; return false; }
         else if (x3 == x5 && x5 == x7 && x3 != ' ' && x5 != ' ' && x7 != ' ') { this->winner=x3; return false; }
+
+        else if (x1 != ' ' and x2 != ' ' and x3 != ' ' and x4 != ' ' and x5 != ' ' and x6 != ' ' and x7 != ' ' and x8 != ' ' and x9 != ' ') { this->winner="no one (tied)"; return false; }
         else { return true; }
     }
 
     string getTimeStamp(); // returns a time as a string
-    void logMoves(); // log moves onto a log.txt file
+    void logMoves(string w) // log moves onto a log.txt file
+    {
+        ofstream writer("log_file.txt" , ios::app);
 
+        writer << "Winner is " << w << endl;
+        writer.close();
+    }
     int convertMove(string move) {
         if (move == "1 1") return 0;
         else if (move == "1 2") return 1;
@@ -109,7 +117,7 @@ class Board
         }
     }
 
-    char getWinner() { return this->winner; }
+    string getWinner() { return this->winner; }
 
 
     private:
@@ -117,6 +125,6 @@ class Board
         vector<char> boardState;    // current state of the tictactoe board
         vector<string> boardLogs;   // logs of the board
         char currentPlayerTurn;     // the player turn
-        char winner;                // returns player who won
+        string winner;                // returns player who won
 };
 
