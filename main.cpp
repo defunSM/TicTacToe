@@ -26,6 +26,7 @@ int main() {
   while (b->checkForWin()) {
 
     b->displayBoard();
+    cout << "Current Turn: Player " << b->getCurrentPlayerTurn() << endl;
     cout << "Enter your next move! (i.e '1 2' means row 1 column 2)" << endl << endl;
     Prompt();
     getline(cin, userInput);

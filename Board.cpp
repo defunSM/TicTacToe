@@ -118,6 +118,7 @@ class Board
     }
 
     string getWinner() { return this->winner; }
+    char getCurrentPlayerTurn() { return this->currentPlayerTurn; }
 
 
     private:
