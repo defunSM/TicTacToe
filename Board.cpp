@@ -6,8 +6,13 @@ using namespace std;
 
 #define Prompt() cout << "> " // defining the prompt '> ' for asking player
 
-// enum Move { "1 1", "1 2", "1 3", "2 1", "2 2", "2 3", "3 1", "3 2", "3 3" };
-
+/***
+* Class definition for Board
+* The constructor which takes no arguments initializes two private variables
+* boardstate which is an array that determines whats placed on the tic tac toe
+* board. The other variable initalizes the current player which is X since
+* usually goes first. 
+***/
 class Board {
 public:
 	Board() {

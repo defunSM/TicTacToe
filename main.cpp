@@ -1,7 +1,10 @@
-// Andrea Rivera Razo
-// Ayesha Lakra
-// Rizwan Rafi
-// Salman Hossain
+/*** 
+* 
+* file: main.cpp
+* authors: Andrea Rivera Razo, Ayesha Lakra, Rizwan Rafi, Salman Hossain
+* version: 1.01 December, 2020
+*
+***/ 
 
 #include "Board.cpp"
 #include <iostream>
@@ -53,7 +56,7 @@ int main() {
 
 	cout << endl;
 	cout << "Winner is " << b->getWinner() << endl;
-  
+
   int p;
   cout << "Press 1 if you want to play again: " << endl;
   Prompt();
