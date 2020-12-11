@@ -10,10 +10,7 @@
 using namespace std;
 
 int main() {
-  int p;
-  cout<<"Press 1 if you want to  play: ";
-  cin>>p;
-  while (p==1){
+
 	string userInput;
 	string playerOneName, playerTwoName;
 	char boardState[] = {' ',
@@ -56,5 +53,13 @@ int main() {
 
 	cout << endl;
 	cout << "Winner is " << b->getWinner() << endl;
-  }
+  
+  int p;
+  cout << "Press 1 if you want to play again: " << endl;
+  Prompt();
+  cin>>p;
+  if(p==1) { main(); }
+
+
+  
 }
