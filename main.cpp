@@ -1,8 +1,8 @@
 /*** 
 * 
-* file: main.cpp
-* authors: Andrea Rivera Razo, Ayesha Lakra, Rizwan Rafi, Salman Hossain
-* version: 1.01 December, 2020
+* @file: main.cpp
+* @authors: Andrea Rivera Razo, Ayesha Lakra, Rizwan Rafi, Salman Hossain
+* @version: 1.01 December, 2020
 *
 ***/ 
 
