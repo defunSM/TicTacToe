@@ -1,3 +1,11 @@
+/*** 
+* 
+* @file: Board.cpp
+* @authors: Andrea Rivera Razo, Ayesha Lakra, Rizwan Rafi, Salman Hossain
+* @version: 1.01 December, 2020
+*
+***/ 
+
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -165,6 +173,8 @@ public:
 			}
 		}
 	}
+
+  // getters to return winner and current player turn
 
 	string getWinner() {
 		return this->winner;
